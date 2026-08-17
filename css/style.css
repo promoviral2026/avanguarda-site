@@ -906,13 +906,29 @@ button {
 ========================= */
 
 .footer {
+    position: relative;
+    overflow: hidden;
+
     padding:
         75px 0 25px;
 
     color:
-        rgba(255, 255, 255, 0.70);
+        rgba(255, 255, 255, 0.82);
 
-    background: #02142d;
+    background:
+        radial-gradient(
+            circle at 88% 35%,
+            rgba(72, 170, 255, 0.35) 0%,
+            rgba(18, 118, 215, 0.18) 25%,
+            transparent 48%
+        ),
+        linear-gradient(
+            110deg,
+            #021a3d 0%,
+            #043a73 38%,
+            #0769c4 70%,
+            #2c9cf4 100%
+        );
 }
 
 .footer-grid {
