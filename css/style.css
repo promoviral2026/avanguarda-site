@@ -1,7 +1,7 @@
 
 /* =========================================================
    AVANGUARDA
-   Associação dos Proprietários de Veículos Automotores
+   Associação de Proprietários de Veículos Automotores
    ========================================================= */
 
 
@@ -306,9 +306,10 @@ button {
         ),
         url("../assets/AVANGUARDA.jpg");
 
-    background-size: cover;
-    background-position: center;
+    background-size: auto 88%;
+    background-position: 72% 78%;
     background-repeat: no-repeat;
+    background-color: #064f99;
 }
 
 .hero::after {
@@ -1117,7 +1118,8 @@ button {
 
         padding-top: 76px;
 
-        background-position: center;
+        background-size: auto 82%;
+        background-position: 68% 76%;
     }
 
     .hero h1 {
@@ -1171,7 +1173,8 @@ button {
     .hero {
         min-height: 650px;
 
-        background-position: center;
+        background-size: auto 72%;
+        background-position: 66% 82%;
     }
 
     .hero-content {
