@@ -9,7 +9,12 @@
     <title>AVANGUARDA | Associação dos Proprietários de Veículos Automotores do Brasil</title>
 
     <meta name="description"
-        content="AVANGUARDA - Associação dos Proprietários de Veículos Automotores do Brasil. União, transparência e proteção patrimonial mutualista.">
+        content="AVANGUARDA - Associação dos Proprietários de Veículos Automotores do Brasil. União, transparência, benefícios e proteção patrimonial mutualista.">
+    <meta name="theme-color" content="#0b1f3a">
+    <meta property="og:title" content="AVANGUARDA | Proteção, União e Confiança">
+    <meta property="og:description" content="Conheça a AVANGUARDA e faça parte de uma associação construída com cooperação, transparência e responsabilidade.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/AVANGUARDA.jpg">
 
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -40,7 +45,7 @@
 
             <div class="header-actions">
 
-                <a href="#associado" class="btn btn-outline">
+                <a href="#contato" class="btn btn-outline">
                     Área do Associado
                 </a>
 
@@ -50,7 +55,7 @@
 
             </div>
 
-            <button class="menu-mobile" id="menu-mobile" aria-label="Abrir menu">
+            <button class="menu-mobile" id="menu-mobile" aria-label="Abrir menu" aria-controls="nav" aria-expanded="false">
                 ☰
             </button>
 
@@ -155,8 +160,8 @@
                 </div>
 
                 <div class="about-image">
-                    <img src="assets/sobre-avanguarda.webp"
-                        alt="AVANGUARDA - Proteção Patrimonial Mutualista">
+                    <img src="assets/AVANGUARDA.jpg"
+                        alt="AVANGUARDA - Proteção Patrimonial Mutualista" loading="lazy">
                 </div>
 
             </div>
@@ -271,7 +276,7 @@
                         <h3>Assistência 24 horas</h3>
                         <p>
                             Suporte para situações emergenciais previstas
-                            nos benefícios contratados.
+                            no regulamento e nas condições aplicáveis.
                         </p>
                     </div>
 
@@ -431,8 +436,8 @@
                     </h2>
 
                     <p>
-                        Por isso, a AVANGUARDA estará preparada para oferecer
-                        suporte aos seus associados quando eles precisarem.
+                        Por isso, a AVANGUARDA conta com uma estrutura de atendimento
+                        voltada ao suporte de seus associados, conforme o regulamento e os benefícios aplicáveis.
                     </p>
 
                 </div>
@@ -571,7 +576,7 @@
 
                 <a href="#assistencia">Assistência 24h</a>
                 <a href="#associar">Quero me associar</a>
-                <a href="#associado">Área do Associado</a>
+                <a href="#contato">Área do Associado</a>
 
             </div>
 
@@ -586,7 +591,7 @@
             </p>
 
             <p class="footer-disclaimer">
-                A proteção patrimonial mutualista não corresponde a contrato de seguro.
+                A AVANGUARDA atua sob modelo associativo e mutualista. Benefícios, coberturas, limites, carências, critérios de elegibilidade e procedimentos devem ser consultados no regulamento e nos documentos oficiais da associação.
             </p>
 
         </div>
@@ -605,7 +610,38 @@
     </a>
 
 
-    <script src="js/script.js"></script>
+    <script>
+        const menuButton = document.getElementById('menu-mobile');
+        const nav = document.getElementById('nav');
+
+        if (menuButton && nav) {
+            menuButton.addEventListener('click', () => {
+                const isOpen = nav.classList.toggle('active');
+                menuButton.setAttribute('aria-expanded', String(isOpen));
+                menuButton.textContent = isOpen ? '✕' : '☰';
+            });
+
+            nav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    nav.classList.remove('active');
+                    menuButton.setAttribute('aria-expanded', 'false');
+                    menuButton.textContent = '☰';
+                });
+            });
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', event => {
+                const id = anchor.getAttribute('href');
+                if (!id || id === '#') return;
+                const target = document.querySelector(id);
+                if (target) {
+                    event.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
 
 </body>
 
