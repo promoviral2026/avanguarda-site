@@ -200,12 +200,16 @@ button {
 
 .logo {
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
 }
 
 .logo img {
-    width: 205px;
-    max-height: 64px;
+    width: 245px;
+    height: auto;
+    max-height: 72px;
     object-fit: contain;
+    object-position: left center;
 }
 
 .nav {
@@ -1057,7 +1061,8 @@ button {
     }
 
     .logo img {
-        width: 175px;
+        width: 205px;
+        max-height: 62px;
     }
 
     .nav {
@@ -1235,6 +1240,11 @@ button {
 
     .container {
         width: 90%;
+    }
+
+    .logo img {
+        width: 175px;
+        max-height: 56px;
     }
 
     .hero h1 {
