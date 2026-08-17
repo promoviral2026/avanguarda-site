@@ -110,6 +110,15 @@ button {
     transform: translateY(-2px);
 }
 
+.btn:focus-visible,
+.nav a:focus-visible,
+.menu-mobile:focus-visible,
+.footer-links a:focus-visible,
+.whatsapp-float:focus-visible {
+    outline: 3px solid rgba(7, 136, 232, 0.45);
+    outline-offset: 4px;
+}
+
 .btn-primary {
     color: var(--branco);
 
@@ -287,14 +296,15 @@ button {
     background:
         linear-gradient(
             90deg,
-            rgba(3, 20, 45, 0.97) 0%,
-            rgba(4, 36, 75, 0.92) 42%,
-            rgba(5, 64, 116, 0.55) 100%
+            rgba(3, 20, 45, 0.94) 0%,
+            rgba(4, 36, 75, 0.82) 42%,
+            rgba(5, 64, 116, 0.32) 100%
         ),
-        url("../assets/hero.webp");
+        url("../assets/AVANGUARDA.jpg");
 
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 .hero::after {
@@ -472,6 +482,7 @@ button {
     height: 540px;
 
     object-fit: cover;
+    object-position: center;
 }
 
 .about-highlights {
@@ -1101,7 +1112,7 @@ button {
 
         padding-top: 76px;
 
-        background-position: 60% center;
+        background-position: center;
     }
 
     .hero h1 {
@@ -1250,4 +1261,19 @@ button {
         bottom: 18px;
     }
 
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
 }
